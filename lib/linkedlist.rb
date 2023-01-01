@@ -96,7 +96,6 @@ class LinkedList
       accumulator << "#{entry.data}"
       entry = entry.next_node
     end
-    accumulator << 'nil'
     accumulator.join(' ')
   end
 

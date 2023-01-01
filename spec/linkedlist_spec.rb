@@ -110,7 +110,7 @@ describe LinkedList do
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
 
-    expect(@linkedlist.to_string).to eq '1 2 3 nil'
+    expect(@linkedlist.to_string).to eq '1 2 3'
   end
 
   it 'can add a new node at an index' do
@@ -119,7 +119,7 @@ describe LinkedList do
     @linkedlist.append(@node3)
     @linkedlist.insert_at(4, 1)
     expect(@linkedlist.count).to eq 4 
-    expect(@linkedlist.to_string).to eq '1 4 2 3 nil'
+    expect(@linkedlist.to_string).to eq '1 4 2 3'
   end
 
   it 'can remove a node at an index' do
@@ -128,7 +128,7 @@ describe LinkedList do
     @linkedlist.append(@node3)
     @linkedlist.remove_at(1)
     expect(@linkedlist.count).to eq 2
-    expect(@linkedlist.to_string).to eq '1 3 nil'
+    expect(@linkedlist.to_string).to eq '1 3'
 
 
   end
