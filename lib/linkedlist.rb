@@ -29,7 +29,7 @@ class LinkedList
     end
   end
 
-  def size
+  def count
     count = 0
     return 0 if @head.nil?
 
@@ -61,7 +61,7 @@ class LinkedList
 
   def pop
     deleted = @tail
-    @tail = previous_from(size - 1)
+    @tail = previous_from(count - 1)
     @tail.next_node= nil
     deleted
   end
@@ -89,11 +89,11 @@ class LinkedList
     nil
   end
 
-  def to_s
+  def to_string
     entry = @head
     accumulator = []
     until entry.nil?
-      accumulator << "( #{entry.data} ) ->"
+      accumulator << "#{entry.data}"
       entry = entry.next_node
     end
     accumulator << 'nil'
@@ -104,7 +104,7 @@ class LinkedList
     new_node = Node.new(value)
     if index == 0
       prepend(new_node)
-    elsif index == (size - 1)
+    elsif index == (count - 1)
       append(new_node)
     else
       previous = at((index - 1))
@@ -117,7 +117,7 @@ class LinkedList
   def remove_at(index)
     if index == 0
       @head = @head.next_node
-    elsif index == (size - 1)
+    elsif index == (count - 1)
       @tail = at((index - 1))
       @tail.next_node= nil
     else

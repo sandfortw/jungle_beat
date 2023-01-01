@@ -33,13 +33,13 @@ describe LinkedList do
     expect(@linkedlist.tail).to eq(@node1)
   end
 
-  it 'has a size' do
+  it 'has a count' do
     expect(@linkedlist).to be_a(LinkedList)
-    expect(@linkedlist.size).to eq 0
+    expect(@linkedlist.count).to eq 0
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
-    expect(@linkedlist.size).to eq 3
+    expect(@linkedlist.count).to eq 3
   end
 
   it 'has a head' do
@@ -83,7 +83,7 @@ describe LinkedList do
 
     expect(@linkedlist.pop).to eq @node3
     expect(@linkedlist.pop).to eq @node2
-    expect(@linkedlist.size).to eq 1
+    expect(@linkedlist.count).to eq 1
   end
 
   it 'can ask if it contains a value' do
@@ -110,7 +110,7 @@ describe LinkedList do
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
 
-    expect(@linkedlist.to_s).to eq '( 1 ) -> ( 2 ) -> ( 3 ) -> nil'
+    expect(@linkedlist.to_string).to eq '1 2 3 nil'
   end
 
   it 'can add a new node at an index' do
@@ -118,8 +118,8 @@ describe LinkedList do
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
     @linkedlist.insert_at(4, 1)
-    expect(@linkedlist.size).to eq 4 
-    expect(@linkedlist.to_s).to eq '( 1 ) -> ( 4 ) -> ( 2 ) -> ( 3 ) -> nil'
+    expect(@linkedlist.count).to eq 4 
+    expect(@linkedlist.to_string).to eq '1 4 2 3 nil'
   end
 
   it 'can remove a node at an index' do
@@ -127,8 +127,8 @@ describe LinkedList do
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
     @linkedlist.remove_at(1)
-    expect(@linkedlist.size).to eq 2
-    expect(@linkedlist.to_s).to eq '( 1 ) -> ( 3 ) -> nil'
+    expect(@linkedlist.count).to eq 2
+    expect(@linkedlist.to_string).to eq '1 3 nil'
 
 
   end
